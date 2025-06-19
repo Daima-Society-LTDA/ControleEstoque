@@ -20,7 +20,7 @@ Este projeto foi proposto pelo professor Alessandro Lima da FATEC PG, foi realiz
 * Marcos Vinicius
 * Daniel Patricio
 
-## Tencologias utilizadas
+## Tecnologias utilizadas
 
 + Java
 + Spring
