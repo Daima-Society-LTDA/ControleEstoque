@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Produtos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title is-2 has-text-centered mt-5">Sistema de Estoque</h1>
+        <div class="buttons is-centered">
+            <button class="button is-info" onclick="consultarProdutos()">Listar Produtos</button>
+            <button class="button is-warning" onclick="esconderProdutos()">Esconder Produtos</button>
+        </div>
+        <div class="field has-addons is-centered mt-4">
+          <div class="control is-large">
+              <input class="input" type="search" id="input-buscaProduto" placeholder="Buscar por código...">
+          </div>
+          <div class="control">
+              <button class="button is-info" onclick="buscarProduto()">Buscar</button>
+          </div>
+      </div>
+        <ul id="lista-produtos" class="box mt-4">
+            </ul>
+        <div class="has-text-centered mt-5">
+            <a href="adicionar-novo.html" class="button is-success is-large">Adicionar Novo Produto</a>
+        </div>
+    </div>
+
+    <script src="src/script.js"></script>
+</body>
+</html>

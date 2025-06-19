@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title is-2 has-text-centered mt-5">Detalhes do Produto</h1>
+
+        <div id="produto-detalhes" class="box">
+            <p class="loading has-text-centered">Carregando detalhes do produto...</p>
+        </div>
+
+        <div class="box mt-5" id="update-form-section" style="display: none;">
+            <h2 class="title is-4">Atualizar Estoque</h2>
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Nova Quantidade:</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input class="input" type="number" id="novaQuantidadeEstoque" min="0" placeholder="Digite a nova quantidade">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-primary" id="btnAtualizarEstoque">Atualizar Estoque</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p id="updateMessage" class="help"></p>
+        </div>
+
+        <div class="has-text-centered mt-5">
+            <a href="index.html" class="button is-link">Voltar para a Lista de Produtos</a>
+        </div>
+    </div>
+
+    <script src="src/script.js"></script>
+    <script>
+        // Chama a função para carregar e exibir os detalhes ao carregar a página
+        document.addEventListener('DOMContentLoaded', loadAndDisplayProductDetails);
+    </script>
+</body>
+</html>

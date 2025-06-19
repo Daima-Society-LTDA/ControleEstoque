@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Produto</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Link para voltar à página de produtos -->
+        <div class="mt-5">
+            <a href="index.html" class="button is-link">Verificar os Produtos</a>
+        </div>
+
+        <!-- Título da página -->
+        <h1 class="title is-2 has-text-centered mt-5">Cadastrar Novo Produto</h1>
+
+        <!-- Formulário -->
+        <form id="cadastroProdutoForm">
+            <div class="field">
+                <label class="label" for="codigo">Código:</label>
+                <div class="control">
+                    <input class="input" type="text" id="codigo" name="codigo" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="nome">Nome:</label>
+                <div class="control">
+                    <input class="input" type="text" id="nome" name="nome" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="preco">Preço:</label>
+                <div class="control">
+                    <input class="input" type="number" id="preco" name="preco" step="0.01" required min="0">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="quantidadeEstoque">Quantidade:</label>
+                <div class="control">
+                    <input class="input" type="number" id="quantidadeEstoque" name="quantidadeEstoque" required min="0">
+                </div>
+            </div>
+
+            <!-- Botão de cadastro -->
+            <div class="field">
+                <div class="control">
+                    <button class="button is-primary is-fullwidth" type="submit">Cadastrar Produto</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Mensagens de sucesso ou erro -->
+        <div id="message" class="message" style="display: none;">
+            <div class="message-body" id="message-body"></div>
+        </div>
+    </div>
+
+    <script src="src/script.js"></script>
+
+    <script>
+        // O restante do seu script.js deve conter a função cadastrarProduto(produto)
+        // e as outras funções (consultarProdutos, esconderProdutos, buscarProduto, deletarProdutoByCodigo)
+
+        document.getElementById('cadastroProdutoForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            const codigo = document.getElementById('codigo').value.trim();
+            const nome = document.getElementById('nome').value.trim();
+            const preco = parseFloat(document.getElementById('preco').value);
+            const quantidadeEstoque = parseInt(document.getElementById('quantidadeEstoque').value, 10);
+
+            const messageDiv = document.getElementById('message');
+            const messageBody = document.getElementById('message-body');
+            messageDiv.style.display = 'none'; // Esconde mensagens anteriores
+
+            // Validação básica
+            if (!codigo || !nome || isNaN(preco) || isNaN(quantidadeEstoque) || preco < 0 || quantidadeEstoque < 0) {
+                messageBody.textContent = 'Por favor, preencha todos os campos corretamente.';
+                messageDiv.className = 'message is-danger';
+                messageDiv.style.display = 'block';
+                return;
+            }
+
+            const novoProduto = {
+                codigo: codigo,
+                nome: nome,
+                preco: preco,
+                quantidadeEstoque: quantidadeEstoque
+            };
+
+            // Chama a função cadastrarProduto que faz a requisição POST
+            cadastrarProduto(novoProduto)
+                .then(data => {
+                    messageBody.textContent = `Produto "${data.nome}" (Código: ${data.codigo}) cadastrado com sucesso!`;
+                    messageDiv.className = 'message is-success';
+                    messageDiv.style.display = 'block';
+                    document.getElementById('cadastroProdutoForm').reset(); // Limpa o formulário
+                })
+                .catch(error => {
+                    messageBody.textContent = error.message;
+                    messageDiv.className = 'message is-danger';
+                    messageDiv.style.display = 'block';
+                    console.error('Erro no cadastro:', error);
+                });
+        });
+    </script>
+</body>
+</html>
