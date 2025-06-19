@@ -13,7 +13,7 @@ Este projeto foi proposto pelo professor Alessandro Lima da FATEC PG, foi realiz
 ## Integrantes do Projeto
 
 * Daniel Zornek
-  * [Linkedin]([https://www.linkedin.com/in/nome-do-perfil/](https://www.linkedin.com/in/daniel-zornek/))
+  * [Linkedin](https://www.linkedin.com/in/daniel-zornek/)
   * [Github](https://github.com/DanielZornek)
 * Paulo Katsuya
 * Pedro Miranda
