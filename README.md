@@ -6,14 +6,26 @@ Este projeto foi proposto pelo professor Alessandro Lima da FATEC PG, foi realiz
 
 ### O que é necessário para rodar este projeto?
 
-° IntelliJ para rodar o backend
-° VSCode com extensão LiveServer instalada
-° E o mais importante, o projeto utiliza o PostgreSQL como banco, no backend do projeto, há um arquivo de configurações do projeto onde contém o nome do banco, nome e senha de usuário, tudo isso é condigurado no Postgre ou pgadmin, as tabelas o Spring cria sozinho, não há necessidade de já criar a tabela Produto por exemplo.
+* IntelliJ para rodar o backend
+* VSCode com extensão LiveServer instalada
+* E o mais importante, o projeto utiliza o PostgreSQL como banco, no backend do projeto, há um arquivo de configurações do projeto onde contém o nome do banco, nome e senha de usuário, tudo isso é condigurado no Postgre ou pgadmin, as tabelas o Spring cria sozinho, não há necessidade de já criar a tabela Produto por exemplo.
 
 ## Integrantes do Projeto
 
 * Daniel Zornek
+  * [Linkedin]([https://www.linkedin.com/in/nome-do-perfil/](https://www.linkedin.com/in/daniel-zornek/))
+  * [Github](https://github.com/DanielZornek)
 * Paulo Katsuya
 * Pedro Miranda
 * Marcos Vinicius
 * Daniel Patricio
+
+## Tencologias utilizadas
+
++ Java
++ Spring
++ PostgreSQL
++ HTML
++ CSS
++ JS
++ Bulma.io 
